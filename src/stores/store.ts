@@ -30,14 +30,11 @@ class Store {
 
     updateEuroAmount(eurRate: number) {
         const updatedArr: any[] = this.expenses.map(expense => expense.amountEur === 0 ? {...expense, amountEur: (bigDecimal.divide(expense.amountPln, eurRate, 2))} : this.expenses);
-        console.log(updatedArr)
         this.expenses = updatedArr;
     }
 
     addExpense(expense: IExpense) {
         this.expenses.push(expense);
-        console.log('addexpense ran', expense)
-        console.log('expenses', this.expenses)
     }
 
     deleteExpense = (key: string) => {

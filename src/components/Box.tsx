@@ -34,7 +34,6 @@ function Main({ }: Props): JSX.Element {
     }, [euroRate])
 
     const handleChange: TableProps<IExpense>['onChange'] = (pagination: any, filters: any, sorter) => {
-        console.log('Various parameters', pagination, filters, sorter);
         setSortedInfo(sorter as SorterResult<IExpense>);
     };
 
