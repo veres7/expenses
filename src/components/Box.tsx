@@ -20,7 +20,7 @@ function Main({ }: Props): JSX.Element {
     const [sortedInfo, setSortedInfo] = useState<SorterResult<IExpense>>({});
 
     const { data } = useQuery('eurRate', () =>
-        fetch('http://api.nbp.pl/api/exchangerates/rates/a/eur/')
+        fetch('https://api.nbp.pl/api/exchangerates/rates/a/eur/')
             .then(res => res.json())
             .catch(err => {
                 console.log('Unable to fetch exchange rate!', err)
